@@ -1,19 +1,19 @@
 package com.fee.Vo;
 
-public class StudentResponseVo {
+public class UserResponseVo {
 
-	private StudentVo studentVo;
+	private UserVo userVo;
 
 	private String message;
 
 	private int status;
 
-	public StudentVo getStudentVo() {
-		return studentVo;
+	public UserVo getStudentVo() {
+		return userVo;
 	}
 
-	public void setStudentVo(StudentVo studentVo) {
-		this.studentVo = studentVo;
+	public void setStudentVo(UserVo userVo) {
+		this.userVo = userVo;
 	}
 
 	public String getMessage() {
@@ -34,6 +34,6 @@ public class StudentResponseVo {
 
 	@Override
 	public String toString() {
-		return "StudentResponseVo [studentVo=" + studentVo + ", message=" + message + ", status=" + status + "]";
+		return "StudentResponseVo [studentVo=" + userVo + ", message=" + message + ", status=" + status + "]";
 	}
 }

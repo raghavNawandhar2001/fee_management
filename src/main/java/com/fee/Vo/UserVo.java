@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-public class StudentVo {
+public class UserVo {
 
 	@NotBlank
 	private String userName;
@@ -17,7 +17,7 @@ public class StudentVo {
 
 	@NotBlank
 	@Size(min = 4)
-	private String studentName;
+	private String name;
 
 	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
@@ -28,12 +28,28 @@ public class StudentVo {
 
 	private LocalDate joiningDate;
 
+	private int roleId;
+
+	private int status;
+
+	/*
+	 * Getter and Setters :
+	 */
+
 	public String getUserName() {
 		return userName;
 	}
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 
 	public String getPassword() {
@@ -52,12 +68,12 @@ public class StudentVo {
 		this.emailId = emailId;
 	}
 
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public LocalDate getJoiningDate() {
@@ -76,10 +92,19 @@ public class StudentVo {
 		this.mobileNumber = mobileNumber;
 	}
 
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
-		return "StudentVo [userName=" + userName + ", password=" + password + ", emailId=" + emailId + ", studentName="
-				+ studentName + ", mobileNumber=" + mobileNumber + ", joiningDate=" + joiningDate + "]";
+		return "UserVo [userName=" + userName + ", password=" + password + ", name=" + name + ", emailId=" + emailId
+				+ ", mobileNumber=" + mobileNumber + ", joiningDate=" + joiningDate + ", roleId=" + roleId + ", status="
+				+ status + "]";
 	}
 
 }

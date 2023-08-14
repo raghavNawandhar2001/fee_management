@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/home")
-public class StudentController {
+public class UserController {
 
     // http://localhost:9090/home/getStudent
 
-    @GetMapping("/getStudent")
+    @GetMapping("/getUser")
     public String userInfo() {
         System.out.println("getting students !");
         return "student";

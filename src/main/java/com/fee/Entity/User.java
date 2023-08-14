@@ -16,11 +16,11 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 
 @Entity
-@Table(name = "Student_Table")
-public class Student {
+@Table(name = "User_Table")
+public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "student_id")
+	@Column(name = "user_id")
 	private Long id;
 
 	@Column(name = "user_name")
@@ -32,8 +32,8 @@ public class Student {
 	@Column(name = "email_id")
 	private String emailId;
 
-	@Column(name = "student_name")
-	private String studentName;
+	@Column(name = "name")
+	private String name;
 
 	@Column(name = "mobile_no")
 	private String mobileNumber;
@@ -50,7 +50,10 @@ public class Student {
 	private LocalDateTime updatedDate;
 
 	@Column(name = "status")
-	private boolean status = Boolean.FALSE;
+	private int status = 0;
+
+	@Column(name = "role_id")
+	private int roleId;
 
 	// Getters and Setters :
 
@@ -86,12 +89,20 @@ public class Student {
 		this.emailId = emailId;
 	}
 
-	public String getStudentName() {
-		return studentName;
+	public String getName() {
+		return name;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 
 	public LocalDate getJoiningDate() {
@@ -118,29 +129,28 @@ public class Student {
 		this.updatedDate = updatedDate;
 	}
 
-	public boolean isStatus() {
+	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 
-	// toString Method :
-
-	public String getMobileNumber() {
-		return mobileNumber;
+	public int getRoleId() {
+		return roleId;
 	}
 
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
 	}
 
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", userName=" + userName + ", password=" + password + ", emailId=" + emailId
-				+ ", studentName=" + studentName + ", mobileNumber=" + mobileNumber + ", joiningDate=" + joiningDate
-				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + ", status=" + status + "]";
+				+ ", name=" + name + ", mobileNumber=" + mobileNumber + ", joiningDate=" + joiningDate
+				+ ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + ", status=" + status + ", roleId="
+				+ roleId + "]";
 	}
 
 }
