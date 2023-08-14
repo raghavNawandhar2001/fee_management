@@ -16,6 +16,7 @@ public class UserServieImpl implements UserService {
 	@Autowired
 	UserDao userDao;
 
+	@Override
 	public CommonResponseVo addStudent(UserVo vo) {
 		CommonResponseVo commonResponseVo = new CommonResponseVo();
 		User user = new User();
